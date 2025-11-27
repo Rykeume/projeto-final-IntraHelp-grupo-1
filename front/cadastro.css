@@ -22,6 +22,7 @@ body{
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    border-radius: 9px;
 }
 
 .form{
@@ -32,6 +33,7 @@ body{
     flex-direction: column;
     background-color: #fff;
     padding: 3rem;
+    border-radius: 9px;
 }
 
 .form-header{
@@ -110,3 +112,34 @@ margin-bottom: 1.1rem;
     font-weight: 500;
 }
 
+
+@media screen and (max-width: 1330px){
+    .container{
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 720px){
+
+    .container{
+        width: 80%;
+        height: 80%;
+    }
+
+    .title{
+ 
+        margin-top: 80px;
+        font-size: 12px;
+    }
+
+    .continue-button{
+
+        margin-bottom: 100px;
+
+    }
+
+    .input-box label, input{
+        font-size: 11px;
+    }
+}
