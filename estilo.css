@@ -1,0 +1,70 @@
+/*Feito por Mahienny*/
+
+body{
+   
+background-color: #f4f4f4;
+height: 100vh;
+margin: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: Arial, Helvetica, sans-serif ;
+}
+
+.login-box{
+    background-color: #fff;
+    width: 340px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: grid;
+    gap:  16px;
+}
+
+form{
+
+    display: grid;
+    gap: 8px;
+}
+
+h2{
+    color: #333;
+    text-align: center;
+}
+
+.login-box form input{
+
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.login-box form input:focus{
+
+    border-color: #8cbfeb;
+}
+
+input[type="submit"]{
+    background-color: #4a9ae0;
+    color:#fff;
+    font-size: 16px;
+    border:none;
+    transition: 2s;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #2177c3;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+
