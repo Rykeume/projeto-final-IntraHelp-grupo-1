@@ -1,28 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<link rel="stylesheet" href="estilo.css">
 <body>
 
     <!--Feito por Mahienny-->
-    
-<div class="login-box">
 
-    <h2>Login Intra-Help</h2>
-    <form>
+    <nav>
+        <h3>Bem vindo(a) a Intra-Help</h3>
 
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" placeholder="Senha" required>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Contato</a>
+            <a href="front/cadastro.html">Cadastro</a>
+        </div>
 
-        <input type="submit" value="Entrar">
-    </form>
+    </nav>
 
-    <a href="#">Ainda não possui cadastro?</a>
-</div>
+    <div class="container">
+        <h2>Login Intra-Help</h2>
+
+        <form>
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="E-mail" required>
+            </div>
+
+            <div class="input-group">
+               <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Senha" required>
+                </div>
+
+                <button type="submit">Entrar</button>
+        </form>
+        <a href="#">Ainda não possui cadastro?</a>
+    </div>
 
 </body>
+
 </html>
