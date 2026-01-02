@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="btn"><a href="views/paginaLogin.php" >Acessar página de login</a></div>
+    <div class="btn"><a href="views/login.php" >Acessar página de login</a></div>
   </div>
 </body>
 </html>
