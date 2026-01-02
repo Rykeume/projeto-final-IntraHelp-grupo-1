@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /**/
 }
 
 body {
@@ -109,6 +109,10 @@ h2 {
   outline: none;
 }
 
+.input-group input:hover{
+  border-bottom: 1px solid #4e99e6;
+}
+
 button {
   background-color: #4e99e6;
   color: #fff;
@@ -142,3 +146,9 @@ button:hover {
 .container a:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+
