@@ -36,7 +36,7 @@ if ($req === 'POST' && $post === 'cadastrar') {
     }
 
     if (cadastrarUsuario($nome, $senha, $email, $categoria)){
-        header("Location: ../views/paginaLogin.php?sucesso=1");
+        header("Location: ../views/login.html?sucesso=1");
         exit;
     }else{
         header("Location: ../views/cadastro.php?erro=1");
@@ -46,7 +46,7 @@ if ($req === 'POST' && $post === 'cadastrar') {
 
 if ($req === 'POST' && $post === 'login') {
     if (validarEmail($_POST['email'])){
-        header("Location: ../views/paginaLogin.php?erro=1");
+        header("Location: ../views/login.php?erro=1");
     }
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -60,7 +60,7 @@ if ($req === 'POST' && $post === 'login') {
             header("Location: ../views/painel.php");
         }
     }else{
-        header("Location: ../views/paginaLogin.php?erro=1");
+        header("Location: ../views/login.php?erro=1");
     };
     exit;
 }

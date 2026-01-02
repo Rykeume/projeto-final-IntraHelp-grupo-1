@@ -26,7 +26,7 @@
       </div>
       <button class="btn">Atualizar Senha</button>
     </form>
-    <div class="link"><a href="paginaLogin.php" >Já tem uma conta? Faça login</a></div>
+    <div class="link"><a href="login.php" >Já tem uma conta? Faça login</a></div>
     <div class="link"><a href="cadastro.php" >Não tem uma conta? Cadastre-se</a></div>
   </div>
 </body>
