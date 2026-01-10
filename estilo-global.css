@@ -1,0 +1,154 @@
+/* Feito por Mahienny */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /**/
+}
+
+body {
+  margin: 0;
+  padding-top: 60px;
+  background: linear-gradient(135deg, #fff, #cbe7ff);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #6ca2d7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 0 20px;
+  height: 60px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 8px 12px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+nav h3 {
+  margin-right: auto;
+  color: #fff;
+  font-size: 23px;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 380px;
+  height: 400px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: grid;
+  gap: 18px;
+  margin-top: 80px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+h2 {
+  text-align: center;
+  color: #3d3d3d;
+  font-size: 22px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group i {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 17px;
+  color: #8e8d8d;
+  pointer-events: none;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px 10px 44px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-group input:hover{
+  border-bottom: 1px solid #4e99e6;
+}
+
+button {
+  background-color: #4e99e6;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  width: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #337ccc;
+  transform: translateY(-3px); /*move um elemento verticalmente*/
+}
+
+.container a {
+  text-align: center;
+  color: #337ccc;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
