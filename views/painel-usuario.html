@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Usuário - IntraHelp</title>
+    <link rel="stylesheet" href="../estilo-global.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            display: block;
+        }
+        .main-content {
+            margin-top: 80px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header-painel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .btn-novo {
+            background-color: #dededf;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+        .btn-novo:hover {
+            background-color: #322188;
+            text-decoration: none;
+        }
+        .badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+        .badge-aberto { background-color: #007bff; }
+        .badge-pendente { background-color: #ffc107; color: #333; }
+        .badge-encerrado { background-color: #6c757d; }
+        .badge-alta { color: #dc3545; font-weight: bold; }
+        .badge-media { color: #ffc107; font-weight: bold; }
+        .badge-baixa { color: #28a745; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h3>Intra-Help | Área do Usuário</h3>
+        <div class="nav-links">
+            <a href="painel-usuario.html" class="active">Meus Chamados</a>
+            <a href="criarChamado.php">Novo Chamado</a>
+            <a href="../index.php">Sair</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="header-painel">
+                <div>
+                    <h2>Meus Chamados</h2>
+                    <p style="color: #666;">Acompanhe o status das suas solicitações</p>
+                </div>
+                <a href="criarChamado.php" class="btn-novo">
+                    <i class="fa-solid fa-plus"></i> Abrir Novo Chamado
+                </a>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Assunto</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Data</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Exemplos Estáticos -->
+                    <tr>
+                        <td>#1023</td>
+                        <td>Monitor não liga</td>
+                        <td><span class="badge-alta">Alta</span></td>
+                        <td><span class="badge badge-pendente">Em Análise</span></td>
+                        <td>10/01/2026</td>
+                        <td>
+                            <a href="#" title="Ver Detalhes" style="color: #667eea; padding: 0;">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1020</td>
+                        <td>Instalação de Software</td>
+                        <td><span class="badge-media">Média</span></td>
+                        <td><span class="badge badge-aberto">Aberto</span></td>
+                        <td>08/01/2026</td>
+                        <td>
+                            <a href="#" title="Ver Detalhes" style="color: #667eea; padding: 0;">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#0998</td>
+                        <td>Troca de Teclado</td>
+                        <td><span class="badge-baixa">Baixa</span></td>
+                        <td><span class="badge badge-encerrado">Encerrado</span></td>
+                        <td>05/01/2026</td>
+                        <td>
+                            <a href="#" title="Ver Detalhes" style="color: #667eea; padding: 0;">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
