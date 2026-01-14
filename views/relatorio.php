@@ -3,10 +3,16 @@ session_start();
 require_once dirname(__DIR__) . '/models/usuarios.php';
 
 if (!isset($_SESSION['usuario'])) {
-    header("Location: index.php");
+    header("Location: /views/login.php");
     exit;
 }
 $usuario = $_SESSION["usuario"];
+//leandro
+if ($usuario['categoria'] === 'Cliente') {
+    header("Location: /views/painel.php");
+    exit;
+}
+//fim
 session_write_close();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deletarDB'])) {
     $id = (int)$_POST['deletarDB'];

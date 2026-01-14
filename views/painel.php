@@ -1,6 +1,16 @@
 <?php
     session_start();
     $usuario = $_SESSION['usuario'];
+
+    //leandro
+if ($usuario['categoria'] === 'Funcionario')
+    header("Location: /views/relatorio.php");
+if (!isset($_SESSION['usuario'])) {
+    header("Location: /views/login.php");
+}
+    //fim
+
+
     session_write_close();
 ?>
 <!DOCTYPE html>

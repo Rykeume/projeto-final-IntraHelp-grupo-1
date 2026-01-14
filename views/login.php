@@ -1,3 +1,23 @@
+<!--feito por leandro-->
+<?php
+session_start();
+
+if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+
+    if ($usuario['categoria'] === 'Funcionario') {
+        header("Location: ../views/relatorio.php");
+        exit;
+    }
+
+    if ($usuario['categoria'] === 'Cliente') {
+        header("Location: ../views/painel.php");
+        exit;
+    }
+}
+?>
+<!--fim-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -25,7 +45,7 @@
 
     <div class="container">
         <h2>Login Intra-Help</h2>
-        
+
         <?php if (isset($_GET['logout']) && $_GET['logout'] == '1'): ?>
           <div class="sucesso-msg">Sessão encerrada com sucesso.</div>
         <?php endif; ?>

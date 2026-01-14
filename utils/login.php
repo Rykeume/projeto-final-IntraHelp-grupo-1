@@ -24,6 +24,6 @@ function login($email, $senha) {
 function logout() {
     session_start();
     session_destroy();
-    header("Location: ../views/paginaLogin.php?logout=1");
+    header("Location: /views/login.php?logout=1");
     exit();
 }
