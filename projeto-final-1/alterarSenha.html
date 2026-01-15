@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Senha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="alterarSenha.css">
+
+    <!--Feito por Mahienny-->
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Alterar senha</h1>
+
+        <div class="caixa">
+            <input type="text" id="alterar" placeholder="Altere sua senha">
+        </div>
+
+        <div class="box">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Usuário">
+        </div>
+
+        <div class="box">
+            <i class="fa fa-lock"></i>
+            <input type="number" placeholder="Senha atual">
+        </div>
+
+        <div class="box">
+            <i class="fa fa-lock"></i>
+            <input type="number" placeholder="Senha nova">
+        </div>
+
+        <div class="box">
+            <i class="fa fa-eye toggle" data-target="confirmarSenha"></i>
+            <input type="password" id="confirmarSenha" placeholder="Confirmar senha">
+        </div>
+
+
+        <div class="botao">
+            <button submit>Redefinir</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
