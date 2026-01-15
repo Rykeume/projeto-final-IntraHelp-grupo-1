@@ -22,6 +22,9 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
     <div class="container">
         <h1>Bem vindo, <?= htmlspecialchars($usuario['nome']) ?>!</h1>
         <div class="link"><a href="alterarUsuario.php" >Alterar Dados e Credenciais</a></div>

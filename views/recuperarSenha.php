@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
   <div class="container">
     <h2>Recuperar Senha</h2>
     <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>

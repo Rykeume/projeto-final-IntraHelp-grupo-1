@@ -16,6 +16,9 @@ session_write_close();
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
   <div class="container">
     <div style="text-align: left;">
         <a href="painel.php" style="text-decoration: none; color: var(--text-secondary); display: flex; align-items: center; margin-bottom: 20px;">

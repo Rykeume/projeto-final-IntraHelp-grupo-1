@@ -29,6 +29,9 @@ $usuarios = todosUsuarios();
     <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
     <div class="container">
         <h1>Bem vindo, <?= htmlspecialchars($usuario['nome']) ?>!</h1>
         <h2>Relatório de Usuários</h2>

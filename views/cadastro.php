@@ -8,6 +8,9 @@
   <!--Parte feita por Mahienny-->
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
   <div class="container">
     <div class="form">
 

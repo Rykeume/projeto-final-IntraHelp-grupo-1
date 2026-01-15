@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
   <div class="container">
     <p2>Você pode alterar as informações abaixo</p2>
     <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>

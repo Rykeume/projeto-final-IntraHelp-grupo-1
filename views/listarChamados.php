@@ -21,6 +21,9 @@ $meusChamados = chamadosPorIdSolicitante($usuario['usuario_id']);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
+<?php
+include 'menu.php';
+?>
     <div class="container container-lg">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
             <div>

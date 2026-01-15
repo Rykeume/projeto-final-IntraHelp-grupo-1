@@ -32,16 +32,9 @@ if (isset($_SESSION['usuario'])) {
 
     <!--Feito por Mahienny-->
 
-    <nav>
-        <h3>Bem vindo(a) a Intra-Help</h3>
-
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Contato</a>
-            <a href="cadastro.php">Cadastro</a>
-        </div>
-
-    </nav>
+    <?php
+    include 'menu.php';
+    ?>
 
     <div class="container">
         <h2>Login Intra-Help</h2>
