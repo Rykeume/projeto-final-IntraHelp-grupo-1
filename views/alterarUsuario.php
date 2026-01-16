@@ -21,7 +21,11 @@ include 'menu.php';
       <input type="hidden" name="acao" value="alterarDados" />
       <div class="form-group">
         <label for="nome">Nome</label>
-        <input id="nomeNovo" type="text" name="nomeNovo" placeholder="Novo Nome"/>
+          <?php
+          session_start();
+          $usuario = $_SESSION['usuario'];
+          ?>
+        <input id="nomeNovo" type="text" name="nomeNovo" placeholder="Novo Nome" value="<?php echo $usuario['nome']; ?>"/>
       </div>
       <div class="form-group">
         <label for="emailNovo">E-mail</label>

@@ -36,7 +36,7 @@ if ($req === 'POST' && $post === 'cadastrar') {
     }
 
     if (cadastrarUsuario($nome, $senha, $email, $categoria)){
-        header("Location: ../views/login.html?sucesso=1");
+        header("Location: ../views/login.php?sucesso=1");
         exit;
     }else{
         header("Location: ../views/cadastro.php?erro=1");
@@ -89,6 +89,12 @@ if ($req === 'POST' && $post === 'alterarDados') {
     $senhaNova = $_POST['senhaNova'];
     $nome = $_POST['nomeNovo'];
 
+    if (empty($senhaNova)) {
+        $senhaNova = $senha;
+    }
+    if(empty($emailNovo)){
+        $emailNovo = $email;
+    }
     if (atualizarDados($nome, $emailNovo, $senhaNova, $email, $senha)){
         header("Location: ../views/alterarUsuario.php?sucesso=1");
     }else{
