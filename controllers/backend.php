@@ -103,6 +103,17 @@ if ($req === 'POST' && $post === 'alterarDados') {
     exit;
 }
 
+if($req === 'POST' && $post === 'criarChamado'){
+    session_start();
+    $usuario = $_SESSION['usuario'];
+    $titulo = $_POST['titulo'];
+    if(criarChamado($usuario['usuario_id'], $titulo, 2)){
+        header("Location: ../views/listarChamados.php?sucesso=1");
+    }
+    else{
+        header("Location: ../views/listarChamados.php?erro=1");
+    }
+}
 if (isset($_GET['acao']) && $_GET['acao'] === 'sair') {
     logout();
 }
