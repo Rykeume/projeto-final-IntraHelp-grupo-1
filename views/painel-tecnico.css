@@ -1,0 +1,103 @@
+body {
+            display: block; 
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+        .main-content {
+            margin-top: 80px; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            min-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-painel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .card h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .badge {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: white;
+        }
+        .badge-aberto { background-color: #007bff; }
+        .badge-andamento { background-color: #17a2b8; }
+        .badge-pendente { background-color: #ffc107; color: #333; }
+        .badge-encerrado { background-color: #6c757d; }
+        
+        .btn-action {
+            margin: 0 2px;
+            color: #555;
+            transition: color 0.2s;
+            padding: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-edit:hover { color: #007bff; }
+        .btn-close:hover { color: #dc3545; }
+        .btn-view:hover { color: #28a745; }
+
+        .filters-btn{
+            width: auto;
+            padding: 0.5rem 1rem;
+        }
+
+        .filters {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .filters select, .filters input {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        h2 { margin: 0; }
+
+        .span-alta{
+            color: #dc3545; font-weight: bold;
+        }
+
+        .span-media{
+            color: #ffc107; font-weight: bold;
+        }
+        .span-baixa{
+            color: #28a745; font-weight: bold;
+        }

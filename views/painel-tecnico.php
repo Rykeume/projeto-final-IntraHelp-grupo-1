@@ -1,115 +1,39 @@
+<?php
+    session_start();
+    require_once dirname(__DIR__) . '/models/chamados.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do Técnico - IntraHelp</title>
-    <link rel="stylesheet" href="../estilo-global.css">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./painel-tecnico.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            display: block; 
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-        }
-        .main-content {
-            margin-top: 80px; 
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .header-painel {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .stats-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .card h3 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: #667eea;
-        }
-        .card p {
-            color: #666;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
-        .badge {
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: white;
-        }
-        .badge-aberto { background-color: #007bff; }
-        .badge-andamento { background-color: #17a2b8; }
-        .badge-pendente { background-color: #ffc107; color: #333; }
-        .badge-encerrado { background-color: #6c757d; }
-        
-        .btn-action {
-            margin: 0 2px;
-            color: #555;
-            transition: color 0.2s;
-            padding: 0;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .btn-edit:hover { color: #007bff; }
-        .btn-close:hover { color: #dc3545; }
-        .btn-view:hover { color: #28a745; }
-
-        .filters {
-            background: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-        .filters select, .filters input {
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        h2 { margin: 0; }
-    </style>
 </head>
 <body>
 
-    <nav style="background-color: #4a5568;">
+    <nav>
         <h3>Intra-Help | Painel Administrativo</h3>
         <div class="nav-links">
             <a href="painel-tecnico.html" class="active">Gerenciar Chamados</a>
             <a href="relatorio.php">Relatórios</a>
-            <a href="../index.php">Sair</a>
+            <a href="../controllers/backend.php?acao=sair">Sair</a>
         </div>
     </nav>
 
     <div class="main-content">
-        <div class="container" style="max-width: 1200px;">
+        <div class="container">
+
+            <div class="header-painel">
+                <div>
+                    <h2>Gerenciamento de Chamados</h2>
+                    <p>Visualize e gerencie as solicitações de suporte</p>
+                </div>
+            </div>
+
             <div class="stats-cards">
                 <div class="card">
                     <h3>12</h3>
@@ -129,13 +53,6 @@
                 </div>
             </div>
 
-            <div class="header-painel">
-                <div>
-                    <h2>Gerenciamento de Chamados</h2>
-                    <p style="color: #666;">Visualize e gerencie as solicitações de suporte</p>
-                </div>
-            </div>
-
             <div class="filters">
                 <span>Filtrar por:</span>
                 <select>
@@ -145,7 +62,7 @@
                     <option value="Encerrado">Encerrado</option>
                 </select>
                 <input type="text" placeholder="Buscar por ID ou Assunto...">
-                <button class="btn" style="width: auto; padding: 0.5rem 1rem;">Filtrar</button>
+                <button class="filters-btn btn" >Filtrar</button>
             </div>
 
             <table class="data-table" style="max-width: 100%;">
@@ -166,7 +83,7 @@
                         <td>#1024</td>
                         <td>Internet Lenta no Setor B</td>
                         <td>João Silva</td>
-                        <td><span style="color: #dc3545; font-weight: bold;">Alta</span></td>
+                        <td><span class="span-alta">Alta</span></td>
                         <td><span class="badge badge-aberto">Aberto</span></td>
                         <td>10/01/2026</td>
                         <td>
@@ -180,7 +97,7 @@
                         <td>#1023</td>
                         <td>Monitor não liga</td>
                         <td>Maria Souza</td>
-                        <td><span style="color: #dc3545; font-weight: bold;">Alta</span></td>
+                        <td><span class="span-alta">Alta</span></td>
                         <td><span class="badge badge-andamento">Em Andamento</span></td>
                         <td>10/01/2026</td>
                         <td>
@@ -194,7 +111,7 @@
                         <td>#1020</td>
                         <td>Instalação de Software</td>
                         <td>Carlos Pereira</td>
-                        <td><span style="color: #ffc107; font-weight: bold;">Média</span></td>
+                        <td><span class="span-media">Média</span></td>
                         <td><span class="badge badge-aberto">Aberto</span></td>
                         <td>08/01/2026</td>
                         <td>
@@ -208,7 +125,7 @@
                         <td>#0998</td>
                         <td>Troca de Teclado</td>
                         <td>Ana Costa</td>
-                        <td><span style="color: #28a745; font-weight: bold;">Baixa</span></td>
+                        <td><span class="span-baixa">Baixa</span></td>
                         <td><span class="badge badge-encerrado">Encerrado</span></td>
                         <td>05/01/2026</td>
                         <td>

@@ -2,7 +2,7 @@
 require_once dirname(__DIR__). "/utils/connect.php";
 function todosChamados(){
     $pdo = conectarDB();
-    $sql = "SELECT u.nome, c.descricao, us.nome, c.status, c.data_criacao FROM chamados c
+    $sql = "SELECT u.nome, c.descricao, us.nome, c.status, c.data_criacao, c.prioridade FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
@@ -14,7 +14,7 @@ function todosChamados(){
 
 function chamadoPorId($idChamado){
     $pdo = conectarDB();
-    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao FROM chamados c
+    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
@@ -28,7 +28,7 @@ function chamadoPorId($idChamado){
 }
 function chamadosPorIdSolicitante($idSolicitante){
     $pdo = conectarDB();
-    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao FROM chamados c
+    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
@@ -42,7 +42,7 @@ function chamadosPorIdSolicitante($idSolicitante){
 }
 function chamadosPorIdResponsavel($idResponsavel){
     $pdo = conectarDB();
-    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao FROM chamados c
+    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
@@ -55,10 +55,10 @@ function chamadosPorIdResponsavel($idResponsavel){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function criarChamado($idSolicitante, $descricao, $idResponsavel){
+function criarChamado($idSolicitante, $descricao, $idResponsavel, $prioridade, $titulo){
     $pdo = conectarDB();
-    $sql = "INSERT INTO chamados (solicitante_id, descricao, responsavel_id)
-            VALUES (:solicitante_id, :descricao, :responsavel_id);";
+    $sql = "INSERT INTO chamados (solicitante_id, descricao, responsavel_id, prioridade, titulo)
+            VALUES (:solicitante_id, :descricao, :responsavel_id, :prioridade, :titulo);";
     $stmt = $pdo->prepare($sql);
     $resultado = false;
 
@@ -66,7 +66,9 @@ function criarChamado($idSolicitante, $descricao, $idResponsavel){
         $stmt->execute([
                 ":solicitante_id" => $idSolicitante,
                 ":descricao" => $descricao,
-                ":responsavel_id"=> $idResponsavel
+                ":responsavel_id"=> $idResponsavel,
+                ":prioridade" => $prioridade,
+                ":titulo" => $titulo
             ]
         );        
     $resultado = true;
