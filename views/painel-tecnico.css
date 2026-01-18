@@ -51,10 +51,11 @@ body {
             font-weight: bold;
             color: white;
         }
-        .badge-aberto { background-color: #007bff; }
-        .badge-andamento { background-color: #17a2b8; }
+        .badge-Aberto { background-color: #007bff; }
         .badge-pendente { background-color: #ffc107; color: #333; }
-        .badge-encerrado { background-color: #6c757d; }
+        .badge-Encerrado { background-color: #6c757d; }
+
+        .atendimento { background-color: #17a2b8; }
         
         .btn-action {
             margin: 0 2px;
@@ -91,13 +92,13 @@ body {
         }
         h2 { margin: 0; }
 
-        .span-alta{
+        .span-Alta{
             color: #dc3545; font-weight: bold;
         }
 
-        .span-media{
+        .span-Media{
             color: #ffc107; font-weight: bold;
         }
-        .span-baixa{
+        .span-Baixa{
             color: #28a745; font-weight: bold;
         }

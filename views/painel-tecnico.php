@@ -1,8 +1,11 @@
 <?php
     session_start();
     require_once dirname(__DIR__) . '/models/chamados.php';
-?>
 
+    $chamados = todosChamados();
+    $contagemStatus = contagemTodosChamadosPorStatus();
+    $totalChamados = contagemTodosChamados();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,21 +39,15 @@
 
             <div class="stats-cards">
                 <div class="card">
-                    <h3>12</h3>
+                    <h3><?= $totalChamados ?></h3>
                     <p>Total de Chamados</p>
                 </div>
+                <?php foreach($contagemStatus as $c):?>
                 <div class="card">
-                    <h3>5</h3>
-                    <p>Em Aberto</p>
+                    <h3><?= $c['Total'] ?></h3>
+                    <p><?= $c['status'] ?></p>
                 </div>
-                <div class="card">
-                    <h3>3</h3>
-                    <p>Em Andamento</p>
-                </div>
-                <div class="card">
-                    <h3>4</h3>
-                    <p>Encerrados</p>
-                </div>
+                <?php endforeach?>
             </div>
 
             <div class="filters">
@@ -58,7 +55,7 @@
                 <select>
                     <option value="">Todos os status</option>
                     <option value="Aberto">Aberto</option>
-                    <option value="Em Andamento">Em Andamento</option>
+                    <option value="Em atendimento">Em Andamento</option>
                     <option value="Encerrado">Encerrado</option>
                 </select>
                 <input type="text" placeholder="Buscar por ID ou Assunto...">
@@ -79,63 +76,24 @@
                 </thead>
                 <tbody>
                     <!-- Exemplo 1 -->
+                    <?php foreach($chamados as $ch): ?>
                     <tr>
-                        <td>#1024</td>
-                        <td>Internet Lenta no Setor B</td>
-                        <td>João Silva</td>
-                        <td><span class="span-alta">Alta</span></td>
-                        <td><span class="badge badge-aberto">Aberto</span></td>
-                        <td>10/01/2026</td>
+                        <td><?= $ch['numero'] ?></td>
+                        <td><?= $ch['titulo'] ?></td>
+                        <td><?= $ch['solicitante'] ?></td>
+                        <td><span class="span-<?= $ch['prioridade'] ?>"><?= $ch['prioridade'] ?></span></td>
+                        <td><span class="badge badge-<?= $ch['status'] ?>"><?= $ch['status'] ?></span></td>
+                        <td><?= date('d/m/Y', strtotime($ch['data_criacao'])) ?></td>
                         <td>
                             <button class="btn-action btn-view" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
                             <button class="btn-action btn-edit" title="Atualizar Status"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="btn-action btn-close" title="Encerrar Chamado"><i class="fa-solid fa-check-circle"></i></button>
                         </td>
                     </tr>
-                    <!-- Exemplo 2 -->
-                    <tr>
-                        <td>#1023</td>
-                        <td>Monitor não liga</td>
-                        <td>Maria Souza</td>
-                        <td><span class="span-alta">Alta</span></td>
-                        <td><span class="badge badge-andamento">Em Andamento</span></td>
-                        <td>10/01/2026</td>
-                        <td>
-                            <button class="btn-action btn-view" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn-action btn-edit" title="Atualizar Status"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn-action btn-close" title="Encerrar Chamado"><i class="fa-solid fa-check-circle"></i></button>
-                        </td>
-                    </tr>
-                    <!-- Exemplo 3 -->
-                    <tr>
-                        <td>#1020</td>
-                        <td>Instalação de Software</td>
-                        <td>Carlos Pereira</td>
-                        <td><span class="span-media">Média</span></td>
-                        <td><span class="badge badge-aberto">Aberto</span></td>
-                        <td>08/01/2026</td>
-                        <td>
-                            <button class="btn-action btn-view" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn-action btn-edit" title="Atualizar Status"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn-action btn-close" title="Encerrar Chamado"><i class="fa-solid fa-check-circle"></i></button>
-                        </td>
-                    </tr>
-                    <!-- Exemplo 4 -->
-                    <tr>
-                        <td>#0998</td>
-                        <td>Troca de Teclado</td>
-                        <td>Ana Costa</td>
-                        <td><span class="span-baixa">Baixa</span></td>
-                        <td><span class="badge badge-encerrado">Encerrado</span></td>
-                        <td>05/01/2026</td>
-                        <td>
-                            <button class="btn-action btn-view" title="VisualizarDetails"><i class="fa-solid fa-eye"></i></button>
-                        </td>
-                    </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>
     </div>
-
 </body>
 </html>
