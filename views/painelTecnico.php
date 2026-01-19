@@ -1,6 +1,16 @@
 <?php
     session_start();
     require_once dirname(__DIR__) . '/models/chamados.php';
+    
+    if (isset($_SESSION['usuario'])) {
+    $usuario = $_SESSION['usuario'];
+
+        if ($usuario['categoria'] !== 'Funcionario') {
+            header("Location: ../views/login.php");
+            exit;
+        }
+    }
+    session_write_close();
 
     $chamados = todosChamados();
     $contagemStatus = contagemTodosChamadosPorStatus();
@@ -87,7 +97,11 @@
                         <td>
                             <button class="btn-action btn-view" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
                             <button class="btn-action btn-edit" title="Atualizar Status"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button class="btn-action btn-close" title="Encerrar Chamado"><i class="fa-solid fa-check-circle"></i></button>
+                            <button class="btn-action btn-close" title="Encerrar Chamado">
+                                <?php if($ch['status'] != "Encerrado"): ?>
+                                    <i class="fa-solid fa-check-circle"></i>
+                                <?php endif; ?>
+                            </button>
                         </td>
                     </tr>
                     <?php endforeach ?>

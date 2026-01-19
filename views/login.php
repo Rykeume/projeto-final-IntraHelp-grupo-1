@@ -6,12 +6,12 @@ if (isset($_SESSION['usuario'])) {
     $usuario = $_SESSION['usuario'];
 
     if ($usuario['categoria'] === 'Funcionario') {
-        header("Location: ../views/relatorio.php");
+        header("Location: ../views/paginaTecnico.php");
         exit;
     }
 
     if ($usuario['categoria'] === 'Cliente') {
-        header("Location: ../views/painel.php");
+        header("Location: ../views/painelUsuario.php");
         exit;
     }
 }

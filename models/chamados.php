@@ -54,7 +54,8 @@ function contagemTodosChamadosPorResponsavel(){
 
 function chamadoPorId($idChamado){
     $pdo = conectarDB();
-    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade FROM chamados c
+    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade, c.titulo  
+            FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
@@ -66,9 +67,10 @@ function chamadoPorId($idChamado){
     );
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
-function chamadosPorIdSolicitante($idSolicitante){
+function chamadosPorIdSolicitante(int $idSolicitante){
     $pdo = conectarDB();
-    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade FROM chamados c
+    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade, c.titulo 
+            FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
@@ -80,9 +82,10 @@ function chamadosPorIdSolicitante($idSolicitante){
     );
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-function chamadosPorIdResponsavel($idResponsavel){
+function chamadosPorIdResponsavel(int $idResponsavel){
     $pdo = conectarDB();
-    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade FROM chamados c
+    $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade, c.titulo 
+            FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
