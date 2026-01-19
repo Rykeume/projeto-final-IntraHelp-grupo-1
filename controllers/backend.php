@@ -55,9 +55,9 @@ if ($req === 'POST' && $post === 'login') {
         $usuario = $_SESSION['usuario'];
 
         if ($usuario['categoria'] === 'Funcionario'){
-            header("Location: ../views/relatorio.php");    
+            header("Location: ../views/painelTecnico.php");    
         } else{
-            header("Location: ../views/painel.php");
+            header("Location: ../views/painelUsuario.php");
         }
     }else{
         header("Location: ../views/login.php?erro=1");
