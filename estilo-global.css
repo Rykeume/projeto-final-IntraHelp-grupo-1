@@ -7,7 +7,6 @@
 }
 
 body {
-  margin: 0;
   padding-top: 60px;
   background: linear-gradient(135deg, #fff, #cbe7ff);
   height: 100vh;
@@ -81,7 +80,6 @@ form {
 h2 {
   text-align: center;
   color: #3d3d3d;
-  font-size: 22px;
 }
 
 .input-group {
