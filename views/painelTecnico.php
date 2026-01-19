@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel do Técnico - IntraHelp</title>
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./painel-tecnico.css">
+    <link rel="stylesheet" href="./painelTecnico.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
     <nav>
         <h3>Intra-Help | Painel Administrativo</h3>
         <div class="nav-links">
-            <a href="painel-tecnico.html" class="active">Gerenciar Chamados</a>
+            <a href="painelTecnico.php" class="active">Gerenciar Chamados</a>
             <a href="relatorio.php">Relatórios</a>
             <a href="../controllers/backend.php?acao=sair">Sair</a>
         </div>

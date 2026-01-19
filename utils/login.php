@@ -10,7 +10,14 @@ function login($email, $senha) {
         return false;
     }
 
-    $_SESSION['usuario'] = $usuario;
+    $_SESSION['usuario'] = [
+       'usuario_id' => $usuario['usuario_id'],
+        'nome' => $usuario['nome'],
+        'email' => $usuario['email'],
+        'categoria' => $usuario['categoria'], 
+        'data_cadastro' => $usuario['data_cadastro']
+        ];
+        
     session_write_close();
 
     if (isset($_POST['lembrar'])) {

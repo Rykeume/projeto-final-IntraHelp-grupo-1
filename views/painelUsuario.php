@@ -1,11 +1,15 @@
 <?php
-    session_start();
     require_once dirname(__DIR__) . '/models/chamados.php';
+    require_once dirname(__DIR__) . '/utils/validacoes.php';
     
-    $solicitante = $_SESSION['usuario']['usuario_id'];
+    if(eUsuarioLogado()){
+        $usuario = $_SESSION['usuario'];
+        $id = $usuario['usuario_id'];
+        $categoria = $usuario['categoria'];
+    }
+    if ($categoria === 'Cliente'){$chamados = chamadosPorIdSolicitante($id);}
+    else{$chamados = chamadosPorIdResponsavel($id);}
     
-    session_write_close();
-    $chamados = chamadosPorIdSolicitante($solicitante);
 ?>
 
 <!DOCTYPE html>
