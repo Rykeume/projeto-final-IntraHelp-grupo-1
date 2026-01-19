@@ -1,0 +1,54 @@
+body {
+    display: block;
+}
+.main-content {
+    margin-top: 80px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.header-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.btn-novo {
+    background-color: #dededf;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+.btn-novo:hover {
+    background-color: #322188;
+    text-decoration: none;
+}
+.badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+}
+.badge-Aberto { background-color: #007bff; }
+.atendimento { background-color: #ffc107; color: #333; }
+.badge-Encerrado { background-color: #6c757d; }
+.badge-Alta { color: #dc3545; font-weight: bold; }
+.badge-Media { color: #ffc107; font-weight: bold; }
+.badge-Baixa { color: #28a745; font-weight: bold; }
+
+p {color: #666;}
+
+a {color: #667eea; padding: 0;}
