@@ -7,7 +7,8 @@
         $id = $usuario['usuario_id'];
         $categoria = $usuario['categoria'];
     }
-    if ($categoria === 'Cliente'){$chamados = chamadosPorIdSolicitante($id);}
+    $eCliente = $categoria === 'Cliente';
+    if ($eCliente){$chamados = chamadosPorIdSolicitante($id);}
     else{$chamados = chamadosPorIdResponsavel($id);}
     
 ?>
@@ -50,7 +51,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Solicitante</th>
+                        <?php if($eCliente): ?>
+                            <th>Responsável</th>
+                        <?php else: ?>
+                            <th>Solicitante</th>
+                        <?php endif; ?>
                         <th>Assunto</th>
                         <th>Prioridade</th>
                         <th>Status</th>
@@ -62,7 +67,11 @@
                     <?php foreach($chamados as $c): ?>
                     <tr>
                         <td><?= $c['numero'] ?></td>
-                        <td><?= $c['solicitante'] ?></td>
+                        <?php if($eCliente): ?>
+                            <td><?= $c['responsavel'] ?></td>
+                        <?php else: ?>
+                            <td><?= $c['solicitante'] ?></td>
+                        <?php endif; ?>
                         <td><?= $c['titulo'] ?></td>
                         <td><span class="badge-<?= $c['prioridade'] ?>"><?= $c['prioridade'] ?></span></td>
                         <td><span class="badge badge-<?= $c['status'] ?>"><?= $c['status'] ?></span></td>
