@@ -1,15 +1,33 @@
 <?php
 require_once dirname(__DIR__). "/utils/connect.php";
-function todosChamados(){
+function todosChamados($status = '', $busca = ''){
     $pdo = conectarDB();
     $sql = "SELECT c.numero, u.nome as solicitante, c.descricao, us.nome as responsavel, c.status, c.data_criacao, c.prioridade, c.titulo 
             FROM chamados c
             INNER JOIN usuarios u
             ON solicitante_id = u.usuario_id
             INNER JOIN usuarios us
-            ON responsavel_id = us.usuario_id;";
+            ON responsavel_id = us.usuario_id
+            WHERE 1=1";
+    $params = [];
+    if (!empty($status)) {
+        $sql .= " AND c.status = ?";
+        $params[] = $status;
+    }
+
+    $busca = trim($busca);
+    if (!empty($busca)) {
+        if (is_numeric($busca)) {
+            $sql .= " AND (c.numero = ? OR c.titulo LIKE ?)";
+            $params[] = (int)$busca; 
+            $params[] = "%$busca%";   
+        } else {
+            $sql .= " AND c.titulo LIKE ?";
+            $params[] = "%$busca%";
+        }
+    }
     $stmt = $pdo->prepare($sql);
-    $stmt->execute();
+    $stmt->execute($params);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
@@ -123,8 +141,8 @@ function criarChamado($idSolicitante, $descricao, $idResponsavel, $prioridade, $
 
 function atualizarResponsavelChamado($idChamado, $idResponsavel){
     $pdo = conectarDB();
-    $sql = "UPDATE chamados (responsavel_id)
-            VALUES (:responsavel_id)
+    $sql = "UPDATE chamados 
+            SET responsavel_id = :responsavel_id
             WHERE numero = :numero;";
     $stmt = $pdo->prepare($sql);
     $resultado = false;
@@ -143,8 +161,8 @@ function atualizarResponsavelChamado($idChamado, $idResponsavel){
 }
 function atualizarStatusChamado($idChamado, $status){
     $pdo = conectarDB();
-    $sql = "UPDATE chamados (status)
-            VALUES (:status)
+    $sql = "UPDATE chamados
+            SET status = :status
             WHERE numero = :numero;";
     $stmt = $pdo->prepare($sql);
     $resultado = false;

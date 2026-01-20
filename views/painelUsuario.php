@@ -50,6 +50,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Solicitante</th>
                         <th>Assunto</th>
                         <th>Prioridade</th>
                         <th>Status</th>
@@ -61,6 +62,7 @@
                     <?php foreach($chamados as $c): ?>
                     <tr>
                         <td><?= $c['numero'] ?></td>
+                        <td><?= $c['solicitante'] ?></td>
                         <td><?= $c['titulo'] ?></td>
                         <td><span class="badge-<?= $c['prioridade'] ?>"><?= $c['prioridade'] ?></span></td>
                         <td><span class="badge badge-<?= $c['status'] ?>"><?= $c['status'] ?></span></td>

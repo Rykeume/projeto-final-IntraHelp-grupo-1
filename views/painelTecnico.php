@@ -12,7 +12,10 @@
     }
     session_write_close();
 
-    $chamados = todosChamados();
+    $statusFiltro = $_GET['status'] ?? '';
+    $buscaFiltro = $_GET['busca'] ?? '';  
+
+    $chamados = todosChamados($statusFiltro, $buscaFiltro);
     $contagemStatus = contagemTodosChamadosPorStatus();
     $totalChamados = contagemTodosChamados();
 ?>
@@ -59,19 +62,19 @@
                 </div>
                 <?php endforeach?>
             </div>
-
-            <div class="filters">
-                <span>Filtrar por:</span>
-                <select>
-                    <option value="">Todos os status</option>
-                    <option value="Aberto">Aberto</option>
-                    <option value="Em atendimento">Em Andamento</option>
-                    <option value="Encerrado">Encerrado</option>
-                </select>
-                <input type="text" placeholder="Buscar por ID ou Assunto...">
-                <button class="filters-btn btn" >Filtrar</button>
-            </div>
-
+            <form method="GET" action="">
+                <div class="filters">
+                    <span>Filtrar por:</span>
+                    <select name="status">
+                        <option value="">Todos os status</option>
+                        <option value="Aberto"<?= htmlspecialchars($statusFiltro) == 'Aberto' ? 'selected' : '' ?>>Aberto</option>
+                        <option value="Em atendimento"<?= htmlspecialchars($statusFiltro) == 'Em atendimento' ? 'selected' : '' ?>>Em Andamento</option>
+                        <option value="Encerrado"<?= htmlspecialchars($statusFiltro )== 'Encerrado' ? 'selected' : '' ?>>Encerrado</option>
+                    </select>
+                    <input type="text" name="busca" value="<?= htmlspecialchars($buscaFiltro) ?>" placeholder="Buscar por ID ou Assunto...">
+                    <button class="filters-btn btn" >Filtrar</button>
+                </div>
+            </form>
             <table class="data-table" style="max-width: 100%;">
                 <thead>
                     <tr>
