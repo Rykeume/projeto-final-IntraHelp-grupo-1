@@ -11,6 +11,7 @@
 <?php
 include 'menu.php';
 ?>
+<div class="main-content">
   <div class="container">
     <div class="form">
 
@@ -67,5 +68,6 @@ include 'menu.php';
       <div class="link"><a href="login.php" >Já tem uma conta? Faça login</a></div>
     </div>
   </div>
+</div>
 </body>
 </html>

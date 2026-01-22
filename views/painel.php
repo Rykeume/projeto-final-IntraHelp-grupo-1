@@ -25,6 +25,7 @@ if (!isset($_SESSION['usuario'])) {
 <?php
 include 'menu.php';
 ?>
+<div class="main-content">
     <div class="container">
         <h1>Bem vindo, <?= htmlspecialchars($usuario['nome']) ?>!</h1>
         <div class="link"><a href="alterarUsuario.php" >Alterar Dados e Credenciais</a></div>
@@ -32,5 +33,6 @@ include 'menu.php';
         <div class="link"><a href="listarChamados.php" >Meus chamados</a></div>
         <a href="../controllers/backend.php?acao=sair" class="btn">Sair</a>
     </div>
+</div>
 </body>
 </html>

@@ -19,6 +19,7 @@ session_write_close();
 <?php
 include 'menu.php';
 ?>
+<div class="main-content">
   <div class="container">
     <div style="text-align: left;">
         <a href="painel.php" style="text-decoration: none; color: var(--text-secondary); display: flex; align-items: center; margin-bottom: 20px;">
@@ -58,5 +59,6 @@ include 'menu.php';
       <button class="btn">Enviar Solicitação</button>
     </form>
   </div>
+</div>
 </body>
 </html>

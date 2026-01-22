@@ -35,38 +35,38 @@ if (isset($_SESSION['usuario'])) {
     <?php
     include 'menu.php';
     ?>
+    <div class="main-content">
+        <div class="container">
+            <h2>Login Intra-Help</h2>
 
-    <div class="container">
-        <h2>Login Intra-Help</h2>
+            <?php if (isset($_GET['logout']) && $_GET['logout'] == '1'): ?>
+            <div class="sucesso-msg">Sessão encerrada com sucesso.</div>
+            <?php endif; ?>
+            <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
+                <div class="sucesso-msg">Cadastro realizado com sucesso! Faça login abaixo.</div>
+            <?php endif; ?>
+            <?php if (isset($_GET['erro']) && $_GET['erro'] == '1'): ?>
+                <div class="erro-msg">E-mail ou senha incorretos.</div>
+            <?php endif; ?>
 
-        <?php if (isset($_GET['logout']) && $_GET['logout'] == '1'): ?>
-          <div class="sucesso-msg">Sessão encerrada com sucesso.</div>
-        <?php endif; ?>
-        <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
-            <div class="sucesso-msg">Cadastro realizado com sucesso! Faça login abaixo.</div>
-        <?php endif; ?>
-        <?php if (isset($_GET['erro']) && $_GET['erro'] == '1'): ?>
-            <div class="erro-msg">E-mail ou senha incorretos.</div>
-        <?php endif; ?>
+            <form method="POST" action="../controllers/backend.php">
+                <input type="hidden" name="acao" value="login" />
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                </div>
 
-        <form method="POST" action="../controllers/backend.php">
-            <input type="hidden" name="acao" value="login" />
-            <div class="input-group">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email" name="email" placeholder="E-mail" required>
-            </div>
+                <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="senha" placeholder="Senha" required>
+                </div>
 
-            <div class="input-group">
-               <i class="fa-solid fa-lock"></i>
-                <input type="password" name="senha" placeholder="Senha" required>
-            </div>
-
-            <button type="submit">Entrar</button>
-        </form>
-        <a href="recuperarSenha.php" >Esqueci minha senha!</a>
-        <a href="cadastro.php">Ainda não possui cadastro?</a>
+                <button type="submit">Entrar</button>
+            </form>
+            <a href="recuperarSenha.php" >Esqueci minha senha!</a>
+            <a href="cadastro.php">Ainda não possui cadastro?</a>
+        </div>
     </div>
-
 </body>
 
 </html>

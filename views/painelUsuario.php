@@ -25,15 +25,9 @@
     
 </head>
 <body>
-
-    <nav>
-        <h3>Intra-Help | Área do Usuário</h3>
-        <div class="nav-links">
-            <a href="painel-usuario.php" class="active">Meus Chamados</a>
-            <a href="criarChamado.php">Novo Chamado</a>
-            <a href="../controllers/backend.php?acao=sair">Sair</a>
-        </div>
-    </nav>
+    <?php
+    include 'menu.php';
+    ?>
 
     <div class="main-content">
         <div class="container">

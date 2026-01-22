@@ -30,16 +30,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
-    <nav>
-        <h3>Intra-Help | Painel Administrativo</h3>
-        <div class="nav-links">
-            <a href="painelTecnico.php" class="active">Gerenciar Chamados</a>
-            <a href="relatorio.php">Relatórios</a>
-            <a href="../controllers/backend.php?acao=sair">Sair</a>
-        </div>
-    </nav>
-
+    <?php
+    include 'menu.php';
+    ?>
     <div class="main-content">
         <div class="container">
 

@@ -9,6 +9,7 @@
 <?php
 include 'menu.php';
 ?>
+<div class="main-content">
   <div class="container">
     <p2>Você pode alterar as informações abaixo</p2>
     <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
@@ -48,5 +49,6 @@ include 'menu.php';
     </form>
     <a href="../controllers/backend.php?acao=sair" class="btn">Sair</a>
   </div>
+</div>
 </body>
 </html>
