@@ -8,7 +8,14 @@ session_write_close();
 
 
 $idChamado = htmlspecialchars($_GET['id']);
+if(!isset($_GET['id'])){
+    header("Location: ../views/painelUsuario.php");
+}
 $meuChamado = chamadoPorId($idChamado);
+if(!isset($meuChamado['numero'])){
+    header("Location: ../views/painelUsuario.php");
+}
+if($meuChamado['numero'] != $usuario){}
 
 ?>
 <!DOCTYPE html>

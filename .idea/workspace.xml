@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7734f05b-f3c6-4818-a91d-654fa6761c00" name="Changes" comment="" />
+    <list default="true" id="7734f05b-f3c6-4818-a91d-654fa6761c00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/VerChamado.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/VerChamado.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/painel.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/painel.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +84,9 @@
       <workItem from="1768430034780" duration="6021000" />
       <workItem from="1768523470765" duration="3881000" />
       <workItem from="1768602139865" duration="2643000" />
-      <workItem from="1768826763576" duration="7317000" />
+      <workItem from="1768826763576" duration="13056000" />
+      <workItem from="1769130115262" duration="713000" />
+      <workItem from="1769132886707" duration="320000" />
     </task>
     <servers />
   </component>
