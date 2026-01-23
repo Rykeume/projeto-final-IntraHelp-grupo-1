@@ -6,19 +6,23 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   background: linear-gradient(135deg, #fff, #cbe7ff);
 }
 
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px; 
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
 .container {
   background: #fff;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 100%;
   min-width: 450px;
 }
 .container:has(table){

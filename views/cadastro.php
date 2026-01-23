@@ -1,3 +1,20 @@
+<?php
+session_start();
+require_once dirname(__DIR__) . '/utils/validacoes.php';
+
+if (!eUsuarioLogado()){
+    header("Location: /views/login.php");
+    exit;
+}
+
+$usuario = $_SESSION['usuario'];
+
+if ($usuario['categoria'] === 'Cliente') {
+    header("Location: /views/painelUsuario.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,7 +45,7 @@ include 'menu.php';
         <div class="erro-msg">Você precisa estar logado para cadastrar um usuário</div>
       <?php endif; ?>
 
-      <form method="POST" action="../controllers/backend.php">
+      <form class="form-cadastro" method="POST" action="../controllers/backend.php">
         <div class="form-header">
           <div class="title">
               <h1>Cadastre-se na IntraHelp</h1>
@@ -38,15 +55,15 @@ include 'menu.php';
         <div class="input-group">
           <input type="hidden" name="acao" value="cadastrar" />
           <div class="tipo-usuario">
-            <div>
-              <label for="Cliente">Cliente</label>
-            <input type="radio" name="categoria" value="Cliente">
-            </div>
-            <div>
-              <label for="Funcionario">Funcionario</label>
-            <input type="radio" name="categoria" value="Funcionario">
-            </div>
-          </div>
+              <label>
+                <input type="radio" id="cliente" name="categoria" value="Cliente">
+                Cliente
+              </label>
+              <label>
+                <input type="radio" id="funcionario" name="categoria" value="Funcionario">
+                Funcionario
+              </label>
+              </div>
           <div class="input-box">
             <label for="nome">Nome completo</label>
             <input id="nome" type="text" name="nome" required placeholder="Nome Completo"/>

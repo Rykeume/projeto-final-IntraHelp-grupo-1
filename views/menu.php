@@ -21,7 +21,7 @@ if(eUsuarioLogado()){
     <!--Feito por Mahienny-->
 
 <nav>
-    <?php if ($funcao == "Funcionario"): // APENAS TÉCNICO ?>
+    <?php if ($funcao == "Funcionario"): ?>
         <h3>Intra-Help | Painel Administrativo</h3>
         <div class="nav-links">
             <a href="painelUsuario.php" class="active">Meus Chamados</a>
@@ -31,7 +31,7 @@ if(eUsuarioLogado()){
             <a href="../controllers/backend.php?acao=sair">Sair</a>
         </div>
 
-    <?php elseif ($funcao == "Cliente"): // APENAS USUÁRIO COMUM ?>
+    <?php elseif ($funcao == "Cliente"):?>
         <h3>Intra-Help | Área do Usuário</h3>
         <div class="nav-links">
             <a href="painelUsuario.php" class="active">Meus Chamados</a>
@@ -39,12 +39,12 @@ if(eUsuarioLogado()){
             <a href="../controllers/backend.php?acao=sair">Sair</a>
         </div>
 
-    <?php else: // VISITANTE OU DESLOGADO ?>
+    <?php else: ?>
         <h3>Bem vindo(a) a Intra-Help</h3>
         <div class="nav-links">
-            <a href="index.php">Home</a>
+            <a href="painel.php">Home</a>
             <a href="contato.php">Contato</a>
-            <a href="cadastro.php">Cadastro</a>
+            <a href="cadastro.php">Solicitar Cadastro</a>
         </div>
     <?php endif; ?>
 </nav>

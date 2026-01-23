@@ -7,9 +7,7 @@
 }
 
 body {
-  padding-top: 60px;
   background: linear-gradient(135deg, #fff, #cbe7ff);
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,14 +58,11 @@ nav h3 {
 
 .container {
   background-color: #ffffff;
-  width: 380px;
-  height: 400px;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   display: grid;
   gap: 18px;
-  margin-top: 80px;
 }
 
 
@@ -147,6 +142,23 @@ button:hover {
 
 
 
-
+.erro-msg {
+  background-color: #ffe0e0;
+  color: #a00;
+  border: 1px solid #d88;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.sucesso-msg {
+  background-color: #e0ffe0;
+  color: #0a0;
+  border: 1px solid #8d8;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
 
 

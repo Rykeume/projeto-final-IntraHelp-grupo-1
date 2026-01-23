@@ -20,7 +20,7 @@ body {
     gap: 1rem;
 }
 .btn-novo {
-    background-color: #dededf;
+    background-color: #667eea;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -32,7 +32,7 @@ body {
     transition: background 0.3s;
 }
 .btn-novo:hover {
-    background-color: #322188;
+    background-color: #5a67d8;
     text-decoration: none;
 }
 .badge {
@@ -51,4 +51,8 @@ body {
 
 p {color: #666;}
 
-a {color: #667eea; padding: 0;}
+a {color: #667eea; padding: 0; margin: 0;}
+
+h2{
+    text-align: start;
+}

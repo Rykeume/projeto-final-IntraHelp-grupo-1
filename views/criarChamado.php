@@ -1,7 +1,9 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
-    header("Location: ../index.php");
+require_once dirname(__DIR__) . '/utils/validacoes.php';
+
+if (!eUsuarioLogado()){
+    header("Location: /views/login.php");
     exit;
 }
 $usuario = $_SESSION['usuario'];
@@ -13,6 +15,7 @@ session_write_close();
   <meta charset="UTF-8" />
   <title>Novo Chamado</title>
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="criarChamado.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
@@ -21,15 +24,17 @@ include 'menu.php';
 ?>
 <div class="main-content">
   <div class="container">
-    <div style="text-align: left;">
-        <a href="painel.php" style="text-decoration: none; color: var(--text-secondary); display: flex; align-items: center; margin-bottom: 20px;">
+    <div class="back_arrow_container">
+        <a href="painel.php" class="back_arrow">
             <span class="material-symbols-outlined">arrow_back</span> Voltar
         </a>
     </div>
 
     <h2>Abrir Solicitação</h2>
-    <p>Descreva o problema detalhadamente.</p>
-
+    <div class="container_p">
+      <p id="solicitacao_p">Descreva o problema detalhadamente.</p>
+    </div>
+    
     <?php if (isset($_GET['erro'])): ?>
       <div class="erro-msg">Houve um erro ao tentar criar o chamado. Tente novamente.</div>
     <?php endif; ?>
@@ -38,17 +43,17 @@ include 'menu.php';
       <input type="hidden" name="acao" value="criarChamado" />
       
       <div class="form-group">
-        <label for="titulo">Assunto</label>
-        <input id="titulo" type="text" name="titulo" required placeholder="Ex: Erro ao logar" />
-      </div>
-
-      <div class="form-group">
         <label for="prioridade">Prioridade</label>
-        <select name="prioridade" id="prioridade">
+        <select name="prioridade" id="prioridade" required>
             <option value="Baixa">Baixa</option>
             <option value="Media" selected>Média</option>
             <option value="Alta">Alta</option>
         </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="titulo">Assunto</label>
+        <input id="titulo" type="text" name="titulo" required placeholder="Ex: Erro ao logar" />
       </div>
 
       <div class="form-group">
@@ -56,7 +61,7 @@ include 'menu.php';
         <textarea id="descricao" name="descricao" rows="4" required placeholder="O que aconteceu?"></textarea>
       </div>
 
-      <button class="btn">Enviar Solicitação</button>
+      <button class="btn" type="submit">Enviar Solicitação</button>
     </form>
   </div>
 </div>

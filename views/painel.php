@@ -30,7 +30,7 @@ include 'menu.php';
         <h1>Bem vindo, <?= htmlspecialchars($usuario['nome']) ?>!</h1>
         <div class="link"><a href="alterarUsuario.php" >Alterar Dados e Credenciais</a></div>
         <div class="link"><a href="criarChamado.php" >Criar um chamado</a></div>
-        <div class="link"><a href="listarChamados.php" >Meus chamados</a></div>
+        <div class="link"><a href="painelUsuario.php" >Meus chamados</a></div>
         <a href="../controllers/backend.php?acao=sair" class="btn">Sair</a>
     </div>
 </div>

@@ -10,29 +10,13 @@ if (!isset($_SESSION['usuario'])) {
 $usuario = $_SESSION['usuario'];
 
 if ($usuario['categoria'] === 'Funcionario') {
-    header("Location: /views/relatorio.php");
+    header("Location: /views/painelTecnico.php");
     exit;
 }
 
 if ($usuario['categoria'] === 'Cliente') {
-    header("Location: /views/painel.php");
+    header("Location: /views/painelUsuario.php");
     exit;
 }
 ?>
-<!-- fim -->
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8" />
-    <title>login</title>
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<div class="container">
-    <div class="btn">
-        <a href="views/login.php">acessar página de login</a>
-    </div>
-</div>
-</body>
-</html>
