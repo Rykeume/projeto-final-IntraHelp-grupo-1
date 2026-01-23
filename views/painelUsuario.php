@@ -77,7 +77,7 @@
                         <td><span class="badge badge-<?= $c['status'] ?>"><?= $c['status'] ?></span></td>
                         <td><?= date('d/m/Y', strtotime($c['data_criacao'])) ?></td>
                         <td>
-                            <a href="#" title="Ver Detalhes">
+                            <a href="../views/verChamado.php?id=<?= $c['numero'] ?>" title="Ver Detalhes">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
                         </td>

@@ -62,11 +62,11 @@ include 'menu.php';
                     </thead>
                     <tbody>
                         <?php foreach ($meusChamados as $c): ?>
-                            <?php 
+                            <?php
                                 // Lógica visual para separar [Prioridade] do texto, se existir
                                 $desc = htmlspecialchars($c['descricao']);
                                 // Define classe da badge baseada no status (assumindo que status vem do banco)
-                                $statusClass = 'pendente'; 
+                                $statusClass = 'pendente';
                                 if(stripos($c['status'], 'Fechado') !== false) $statusClass = 'fechado';
                                 if(stripos($c['status'], 'Aberto') !== false) $statusClass = 'aberto';
                             ?>
