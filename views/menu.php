@@ -42,7 +42,7 @@ if(eUsuarioLogado()){
         <h3>Bem vindo(a) a Intra-Help</h3>
         <div class="nav-links">
             <a href="painel.php">Home</a>
-            <a href="contato.php">Contato</a>
+            <a href="#">Contato</a>
             <a href="cadastro.php">Solicitar Cadastro</a>
         </div>
     <?php endif; ?>

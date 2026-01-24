@@ -5,13 +5,18 @@
   padding: 0;
   box-sizing: border-box; /**/
 }
-
-body {
-  background: linear-gradient(135deg, #fff, #cbe7ff);
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 80px; 
+  padding: 20px;
+}
+
+body {
+  background: linear-gradient(135deg, #fff, #cbe7ff);
   font-family: Arial, sans-serif;
+  min-height: 100svh;
 }
 
 nav {

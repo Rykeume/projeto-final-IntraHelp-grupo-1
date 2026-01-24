@@ -1,5 +1,5 @@
 body {
-    display: block;
+    min-height: 100svh;
 }
 .main-content {
     margin-top: 80px;

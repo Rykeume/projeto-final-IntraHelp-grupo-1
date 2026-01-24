@@ -1,5 +1,5 @@
 body {
-    display: block;
+    min-height: 100svh;
 }
 .main-content {
     margin-top: 80px; 
@@ -51,10 +51,9 @@ body {
     color: white;
 }
 .badge-Aberto { background-color: #007bff; }
-.badge-pendente { background-color: #ffc107; color: #333; }
 .badge-Encerrado { background-color: #6c757d; }
 
-.atendimento { background-color: #17a2b8; }
+.atendimento { background-color:#ffc107; color: #333; }
 
 .btn-action {
     margin: 0 2px;
