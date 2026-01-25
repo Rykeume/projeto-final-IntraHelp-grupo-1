@@ -30,6 +30,13 @@ body {
     line-height: 2;
 }
 
+strong{
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
 #Baixa {
     color: green;
 }
@@ -40,7 +47,4 @@ body {
 
 #Alta {
     color: red;
-}
-strong{
-   color: black;
 }

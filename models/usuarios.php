@@ -129,3 +129,13 @@ function atualizarDados($nomeNovo, $emailNovo, $senhaNova, $email, $senha){
         return false;
     }
 }
+
+function todosColaboradores(){
+    $pdo = conectarDB();
+    $sql = 'SELECT usuario_id, nome from usuarios WHERE categoria = "Funcionario" order by nome asc';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $usuario;
+}

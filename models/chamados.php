@@ -179,3 +179,35 @@ function atualizarStatusChamado($idChamado, $status){
     }
     return $resultado;
 }
+
+function atualizarPrioridadeChamado($idChamado, $prioridade){
+    $pdo = conectarDB();
+    $sql = "UPDATE chamados
+            SET prioridade = :prioridade
+            WHERE numero = :numero;";
+    $stmt = $pdo->prepare($sql);
+    $resultado = false;
+
+    try{
+        $stmt->execute([
+                ":numero" => $idChamado,
+                ":status"=> $prioridade
+            ]
+        );        
+    $resultado = true;
+    } catch(PDOException $e) {
+        die($e->getMessage());
+    }
+    return $resultado;
+}
+
+function statusDeChamados(){
+    $pdo = conectarDB();
+    $sql = "SELECT DISTINCT status
+            FROM chamados
+            ORDER BY status asc";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+

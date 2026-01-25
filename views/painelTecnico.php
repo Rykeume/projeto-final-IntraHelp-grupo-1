@@ -92,13 +92,15 @@
                         <td><span class="badge badge-<?= $ch['status'] ?>"><?= $ch['status'] ?></span></td>
                         <td><?= date('d/m/Y', strtotime($ch['data_criacao'])) ?></td>
                         <td>
-                            <button class="btn-action btn-view" title="Visualizar"><i class="fa-solid fa-eye"></i></button>
-                            <button class="btn-action btn-edit" title="Atualizar Status"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <a href="../views/verChamado.php?id=<?= $ch['numero'] ?>" title="Visualizar">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <!-- <button class="btn-action btn-edit" title="Atualizar Status"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="btn-action btn-close" title="Encerrar Chamado">
                                 <?php if($ch['status'] != "Encerrado"): ?>
                                     <i class="fa-solid fa-check-circle"></i>
                                 <?php endif; ?>
-                            </button>
+                            </button> -->
                         </td>
                     </tr>
                     <?php endforeach ?>
