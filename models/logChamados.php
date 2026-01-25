@@ -42,3 +42,17 @@ function criarLog($idChamado, $status ,$idResponsavel, $prioridade, $comentario)
         logSemComentario($idChamado, $status ,$idResponsavel, $prioridade);
     }
 }
+
+function comentariosPorIdChamado($idChamado){
+    $pdo = conectarDB();
+    $sql = "SELECT l.comentario, l.data_log, u.nome 
+            from log_chamados l
+            INNER JOIN usuarios u
+            ON responsavel_id = u.usuario_id
+            WHERE l.chamado_id = :id AND l.comentario NOT NULL;";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(
+        [":id"=> $idChamado]
+    );
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
