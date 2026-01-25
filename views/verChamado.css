@@ -25,13 +25,11 @@ body {
 }
 
 .container p {
-    margin-bottom: 1px;
     color: #555;
-    line-height: 2;
+    padding-bottom: .4rem;
 }
 
 strong{
-  margin-bottom: 0.25rem;
   font-weight: 700;
   color: var(--text-soft);
   font-size: 0.9rem;
