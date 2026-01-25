@@ -96,15 +96,13 @@ h2 {
   p{
   color: #666;
   margin: auto;
-  padding-top: 1rem;
   }
 }
 
 a {
-  color: #9dafff;
+  color: var(--link);
   text-decoration: none;
   margin: auto;
-  padding-top: 1rem;
 }
 
 a:hover {
@@ -166,69 +164,6 @@ a:hover {
   margin-bottom: 15px;
   border-radius: 4px;
   font-weight: bold;
-}
-#lembrar-email{
-  justify-content: flex-end;
-  display: flex;
-  flex-direction: row;
-  font-size: 12px;
-}
-#lembrar-email label{
-  margin-right: 5px;
-}
-
-.tipo-usuario{
-  justify-content: flex-end;
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  align-items: flex-end;
-}
-
-.tipo-usuario label{
-  margin-right: 5px;
-}
-
-nav {
-  background-color: #6ca2d7;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  padding: 0 20px;
-  height: 60px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: #fff;
-  font-size: 17px;
-  text-decoration: none;
-  transition: 0.3s;
-  padding: 8px 12px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.25);
-}
-
-nav h3 {
-  margin-right: auto;
-  color: #fff;
-  font-size: 23px;
 }
 
 @media (max-width: 480px) {

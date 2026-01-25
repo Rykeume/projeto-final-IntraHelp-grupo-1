@@ -1,3 +1,15 @@
+<?php
+session_start();
+require_once dirname(__DIR__) . '/utils/validacoes.php';
+
+if (!eUsuarioLogado()){
+    header("Location: /views/login.php");
+    exit;
+}
+$usuario = $_SESSION['usuario'];
+session_write_close();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,10 +51,6 @@ include 'menu.php';
       <input type="hidden" name="acao" value="alterarDados" />
       <div class="form-group">
         <label for="nome">Nome</label>
-          <?php
-          session_start();
-          $usuario = $_SESSION['usuario'];
-          ?>
         <input id="nomeNovo" type="text" name="nomeNovo" placeholder="Novo Nome" value="<?php echo $usuario['nome']; ?>"/>
       </div>
       <div class="form-group">

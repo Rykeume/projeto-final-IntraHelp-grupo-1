@@ -31,9 +31,10 @@ if($meuChamado['numero'] != $usuario){}
 
 <?php include 'menu.php'; ?>
 
+<div class="main-content">
 <div class="container">
 
-    <h1>Detalhes do chamado</h1>
+    <h1>Detalhes do chamado #<?= $meuChamado['numero'] ?></h1>
 
     <div>
 
@@ -55,6 +56,6 @@ if($meuChamado['numero'] != $usuario){}
     </div>
 
 </div>
-
+</div>
 </body>
 </html>

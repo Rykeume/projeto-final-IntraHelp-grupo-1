@@ -1,7 +1,5 @@
 <!--feito por leandro-->
 <?php
-session_start();
-
 if (isset($_SESSION['usuario'])) {
     $usuario = $_SESSION['usuario'];
 
@@ -25,6 +23,7 @@ if (isset($_SESSION['usuario'])) {
   <title>Login</title>
   <link rel="stylesheet" href="../theme.css">
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../forms.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 

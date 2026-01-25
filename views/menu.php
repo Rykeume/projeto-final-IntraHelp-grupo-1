@@ -1,6 +1,8 @@
 <?php
-session_start();
 require_once dirname(__DIR__) . '/utils/validacoes.php';
+
+$funcao = null;
+
 if(eUsuarioLogado()){
     $funcao = $_SESSION['usuario']['categoria'];
 }

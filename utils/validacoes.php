@@ -22,11 +22,12 @@ function validarNome($nome){
 }
 
 function eUsuarioLogado(){
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if (empty($_SESSION['usuario']) || !isset( $_SESSION['usuario'] )) {
         return false;
     };
-    session_write_close();
     return true;
 }
 
