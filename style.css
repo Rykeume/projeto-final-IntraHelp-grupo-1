@@ -35,8 +35,15 @@ h2 {
   color: #333;
 }
 
-.form-group {
-  margin-bottom: 1.25rem;
+.form-header h2::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.3rem;
+  background-color: #8cbfeb;
+  margin: 0 auto;
+  position: absolute;
+  border-radius: 10px;
 }
 
 .form-group label {
@@ -85,6 +92,12 @@ h2 {
 
 .link{
   display: flex;
+
+  p{
+  color: #666;
+  margin: auto;
+  padding-top: 1rem;
+  }
 }
 
 a {
@@ -95,7 +108,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .data-table {
   width: 100%;

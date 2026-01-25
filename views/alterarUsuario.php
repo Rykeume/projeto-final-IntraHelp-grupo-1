@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Alterar Usuario</title>
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../forms.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 <?php
@@ -11,13 +14,27 @@ include 'menu.php';
 ?>
 <div class="main-content">
   <div class="container">
-    <p2>Você pode alterar as informações abaixo</p2>
+    
+    <div class="back_arrow_container">
+        <a href="javascript:history.back()" class="back_arrow">
+            <span class="material-symbols-outlined">arrow_back</span> Voltar
+        </a>
+    </div>
+
+    <div class="form-header">
+      <h2>Alterar Dados do Perfil</h2>
+    </div>
+    <div class="container_p">
+      <p id="solicitacao_p">Você pode alterar as informações abaixo</p>
+    </div>
+
     <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
       <div class="sucesso-msg">Senha alterada com sucesso!</div>
     <?php endif; ?>
     <?php if (isset($_GET['erro']) && $_GET['erro'] == '1'): ?>
       <div class="erro-msg">E-mail ou senha incorretos.</div>
     <?php endif; ?>
+
     <form method="POST" action="../controllers/backend.php">
       <input type="hidden" name="acao" value="alterarDados" />
       <div class="form-group">
@@ -36,7 +53,11 @@ include 'menu.php';
         <label for="senhaNova">Senha</label>
         <input id="senhaNova" type="password" name="senhaNova" placeholder="Nova Senha"/>
       </div>
-      <p>Confirme seus dados atuais</p>
+      
+      <div class="container_p">
+        <p id="solicitacao_p">Confirme seus dados atuais!</p>
+      </div>
+
       <div class="form-group">
         <label for="email">E-mail Atual</label>
         <input id="email" type="email" name="email" required placeholder="E-mail"/>
@@ -47,7 +68,6 @@ include 'menu.php';
       </div>
       <button class="btn">Atualizar Dados</button>
     </form>
-    <a href="../controllers/backend.php?acao=sair" class="btn">Sair</a>
   </div>
 </div>
 </body>

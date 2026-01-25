@@ -17,6 +17,7 @@ $meusChamados = chamadosPorIdSolicitante($usuario['usuario_id']);
 <head>
     <meta charset="UTF-8">
     <title>Meus Chamados</title>
+    <link rel="stylesheet" href="../theme.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>

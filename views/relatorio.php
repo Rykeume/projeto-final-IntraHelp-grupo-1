@@ -26,6 +26,7 @@ $usuarios = todosUsuarios();
 <head>
     <meta charset="UTF-8">
     <title>Relatório de Usuários</title>
+    <link rel="stylesheet" href="../theme.css">
     <link rel="stylesheet" href="../style.css" />
 </head>
 <body>

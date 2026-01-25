@@ -23,8 +23,9 @@ if($meuChamado['numero'] != $usuario){}
 <head>
     <meta charset="UTF-8">
     <title>ver chamado</title>
+    <link rel="stylesheet" href="../theme.css">
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../views/verChamado.css">
+    <link rel="stylesheet" href="verChamado.css">
 </head>
 <body>
 

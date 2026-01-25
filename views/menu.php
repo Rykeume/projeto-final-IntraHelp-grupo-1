@@ -27,6 +27,7 @@ if(eUsuarioLogado()){
             <a href="painelTecnico.php" class="active">Gerenciar Chamados</a>
             <a href="relatorio.php">Gerenciar Usuários</a>
             <a href="cadastro.php">Cadastro</a>
+            <a href="alterarUsuario.php">Alterar Dados</a>
             <a href="../controllers/backend.php?acao=sair">Sair</a>
         </div>
 
@@ -35,6 +36,8 @@ if(eUsuarioLogado()){
         <div class="nav-links">
             <a href="painelUsuario.php" class="active">Meus Chamados</a>
             <a href="criarChamado.php">Novo Chamado</a>
+            <a href="alterarUsuario.php">Alterar Dados</a>
+            <!-- <a href="recuperarSenha.php">Recuperar Senha</a> -->
             <a href="../controllers/backend.php?acao=sair">Sair</a>
         </div>
 

@@ -1,0 +1,141 @@
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+.container_p {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+#solicitacao_p {
+  background: var(--bg-soft);
+  color: var(--text-soft);
+  max-width: 600px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* back arrow */
+
+.back_arrow_container {
+  margin-bottom: 1rem;
+}
+
+.back_arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.back_arrow:hover {
+  text-decoration: none;
+  color:var(--primary-hover);
+  transform: translateX(-3px);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+/* form groups */
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  background: var(--bg-card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group select:focus,
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--shadow-focus);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* buttons */
+
+.btn {
+  width: 100%;
+  padding: 0.75rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* links */
+
+.link {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.link a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+/* messages */
+
+.sucesso-msg {
+  background: var(--success-bg);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.erro-msg {
+  background: var(--error-bg);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* radio */
+
+.tipo-usuario {
+  display: flex;
+  gap: 1rem;
+}

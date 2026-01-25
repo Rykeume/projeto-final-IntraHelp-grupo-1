@@ -1,0 +1,29 @@
+:root {
+  --primary: #667eea;
+  --primary-hover: #5a67d8;
+
+  --text-main: #111;
+  --text-muted: #666;
+  --text-soft: #555;
+
+
+  --bg-page: #f5f6fa;
+  --bg-card: #ffffff;
+  --bg-soft: #f5f7fa;
+  --bg-soft-2: #f9fbff;
+
+  --border: #d1d5db;
+  --border-soft: #e1e7f0;
+
+  --blue: #007bff;
+  --gray: #6c757d;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --red: #dc3545;
+  --orange: orange;
+
+  --success-bg: #e6fffa;
+  --error-bg: #fed7d7;
+    
+  --shadow-focus: rgba(102, 126, 234, 0.2);
+}

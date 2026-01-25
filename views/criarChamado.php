@@ -14,7 +14,9 @@ session_write_close();
 <head>
   <meta charset="UTF-8" />
   <title>Novo Chamado</title>
+  <link rel="stylesheet" href="../theme.css">
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../forms.css" />
   <link rel="stylesheet" href="criarChamado.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
@@ -25,12 +27,14 @@ include 'menu.php';
 <div class="main-content">
   <div class="container">
     <div class="back_arrow_container">
-        <a href="painel.php" class="back_arrow">
+        <a href="javascript:history.back()" class="back_arrow">
             <span class="material-symbols-outlined">arrow_back</span> Voltar
         </a>
     </div>
 
-    <h2>Abrir Solicitação</h2>
+    <div class="form-header">
+      <h2>Abrir Solicitação</h2>
+    </div>
     <div class="container_p">
       <p id="solicitacao_p">Descreva o problema detalhadamente.</p>
     </div>
