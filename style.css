@@ -7,15 +7,14 @@
 
 body {
   background: linear-gradient(135deg, #fff, #cbe7ff);
-  min-height: 100svh;
+  min-height: 100vh;
 }
 
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 80px; 
-  padding: 20px;
+  padding-top: 80px; 
 }
 .container {
   background: #fff;
@@ -25,7 +24,8 @@ body {
   min-width: 450px;
 }
 .container:has(table){
-  min-width: 1200px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 h2 {

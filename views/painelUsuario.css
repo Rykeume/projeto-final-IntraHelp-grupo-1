@@ -1,16 +1,4 @@
-body {
-    min-height: 100svh;
-}
-.main-content {
-    margin-top: 80px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-.container {
-    min-width: 1200px;
-    margin: 0 auto;
-}
+
 .header-painel {
     display: flex;
     justify-content: space-between;
