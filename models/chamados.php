@@ -211,3 +211,19 @@ function statusDeChamados(){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function atualizarChamado($idChamado, $status, $idResponsavel, $prioridade) {
+    try {
+        $pdo = conectarDB();
+        $pdo->beginTransaction();
+
+        $sql1 = "UPDATE chamados SET status = ?, prioridade = ?, responsavel_id = ? WHERE numero = ?";
+        $stmt1 = $pdo->prepare($sql1);
+        $stmt1->execute([$status, $prioridade, $idResponsavel, $idChamado]);
+
+        $pdo->commit();
+        return true;
+    } catch (Exception $e) {
+        $pdo->rollBack();
+        return false;
+    }
+}

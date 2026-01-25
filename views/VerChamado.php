@@ -13,7 +13,7 @@ if (!eUsuarioLogado()){
 }
 
 $usuario = $_SESSION['usuario'];
-$funcao = $_SESSION['categoria'];
+$funcao = $usuario['categoria'];
 session_write_close();
 
 $idChamado = htmlspecialchars($_GET['id']);
@@ -51,6 +51,15 @@ $funcionarios = todosColaboradores();
         </div>
 
     <h1>Detalhes do chamado #<?= $meuChamado['numero'] ?></h1>
+    <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == '1'): ?>
+        <div class="sucesso-msg">Chamado atualizado com sucesso!</div>
+    <?php endif; ?>
+    <?php if (isset($_GET['erro']) && $_GET['erro'] == '1'): ?>
+        <div class="erro-msg">Houve um problema ao atualizar o chamado, favor tentar novamente.</div>
+    <?php endif; ?>
+    <?php if (isset($_GET['erro']) && $_GET['erro'] == '2'): ?>
+        <div class="erro-msg">Um chamado só pode ser atualizado pelo Responsável do chamado.</div>
+    <?php endif; ?>
 
     <div>
 
@@ -64,8 +73,9 @@ $funcionarios = todosColaboradores();
         </div>
 
         <?php if ($funcao === 'Funcionario'): ?>
-            <form action="../controllers/atualizarChamado.php" method="POST">
-                <input type="hidden" name="id_chamado" value="<?= $idChamado ?>">
+            <form action="../controllers/backend.php" method="POST">
+                <input type="hidden" name="acao" value="atualizarChamado">
+                <input type="hidden" name="chamado_id" value="<?= $meuChamado['numero'] ?>">
                 
                 <div class="form-group">
                     <label>Prioridade</label>

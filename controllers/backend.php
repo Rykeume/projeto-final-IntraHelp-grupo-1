@@ -3,6 +3,8 @@ date_default_timezone_set('America/Sao_Paulo');
 require_once dirname(__DIR__) . '/models/chamados.php';
 require_once dirname(__DIR__) . '/utils/login.php';
 require_once dirname(__DIR__) . '/utils/validacoes.php';
+require_once dirname(__DIR__) . '/models/logChamados.php';
+require_once dirname(__DIR__) . '/models/usuarios.php';
 
 $post = $_POST['acao'];
 $req = $_SERVER['REQUEST_METHOD'];
@@ -110,12 +112,38 @@ if($req === 'POST' && $post === 'criarChamado'){
     $descricao = $_POST['descricao'];
     $prioridade = $_POST['prioridade'];
     if(criarChamado($usuario['usuario_id'], $descricao, 2, $prioridade, $titulo)){
-        header("Location: ../views/listarChamados.php?sucesso=1");
+        header("Location: ../views/painelUsuario.php?sucesso=1");
     }
     else{
-        header("Location: ../views/listarChamados.php?erro=1");
+        header("Location: ../views/painelUsuario.php?erro=1");
     }
 }
+
+if($req === 'POST' && $post === 'atualizarChamado'){
+    session_start();
+    $idResponsavelSessao = $_SESSION['usuario']['usuario_id'];
+    $idResponsavel = $_POST['responsavel_id'];
+    $idChamado = $_POST['chamado_id'];
+    $status = $_POST['status'];
+    $prioridade = $_POST['prioridade'];
+    $comentario = $_POST['comentario'] ?? '';
+
+    if ($idResponsavelSessao !== 2 && $idResponsavel !== $idResponsavelSessao){
+        header("Location: ../views/VerChamado.php?id=" . $idChamado . "&erro=2");
+        exit();
+    }
+
+    if(atualizarChamado($idChamado, $status ,$idResponsavel, $prioridade)){
+        criarLog($idChamado, $status ,$idResponsavel, $prioridade, $comentario);
+        header("Location: ../views/VerChamado.php?id=" . $idChamado . "&sucesso=1");
+        exit();
+    }
+    else{
+        header("Location: ../views/VerChamado.php?id=" . $idChamado . "&erro=1");
+        exit();
+    }
+}
+
 if (isset($_GET['acao']) && $_GET['acao'] === 'sair') {
     logout();
 }

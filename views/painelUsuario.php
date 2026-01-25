@@ -41,6 +41,10 @@
                     <i class="fa-solid fa-plus"></i> Abrir Novo Chamado
                 </a>
             </div>
+            
+            <?php if (isset($_GET['sucesso'])): ?>
+                <div class="sucesso-msg">Chamado criado com sucesso!</div>
+            <?php endif; ?>
 
             <table class="data-table">
                 <thead>
