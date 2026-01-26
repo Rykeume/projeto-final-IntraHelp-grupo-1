@@ -6,6 +6,9 @@
         $usuario = $_SESSION['usuario'];
         $id = $usuario['usuario_id'];
         $categoria = $usuario['categoria'];
+    } else{
+        header("Location: /views/login.php");
+        exit;
     }
     $eCliente = $categoria === 'Cliente';
     if ($eCliente){$chamados = chamadosPorIdSolicitante($id);}
